@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Bikes</title>
+</head>
+<body>
+<h1>A short list of bike manufactureres</h1>
+<h2>Why start at a?</h2>
+//start the head and body like we always do ...lets keep it clean for now
+<?php
+
+//make meaningful names to you variables 
+$name = "bike company";
+$list = array("Merlin ",
+
+//i started the array with one of the names (and my favorite) so that the box wouldn't be blank ....there may be another way to do this... 
+
+"Moots ",
+"Marin ",
+"Masi ",
+"Matt Chester ",
+"Maverick ",
+"Merckx ",
+"Merlin ",
+"Mikkelsen Frames ",
+"Mongoose ",
+"Montague ",
+"Monty ",
+"Mountain Cycle ",
+"Mountain Goat Cycles ",
+"Mrazek ",
+"Museeuw ",
+"Neil Pryde ",
+"Niner Bikes ",
+"Norco ",
+"Novaro (REI) ",
+"Old Man Mountain",
+"Onza ",
+"Orange ",
+"Orbea ",
+"Otis Guy",
+"Pacenti Cycle Design ",
+"Pacific Cycles",
+"Parlee Cycles ",
+"Pashley ",
+"Pegoretti ",
+"Pereira Cycles ",
+"Phat Cycles ",
+"Phil Wood ",
+"Pinarello ",
+"Quintana Roo ",
+"Raleigh ",
+"Rasmus Gjesing ",
+"Red Your Dead ",
+"Redline ",
+"Rhoades Car ",
+"Richard Sachs ",
+"Ritchey",
+"Rivendell ",
+"Rivette ",
+"Rock Lobster ",
+"Rocky Mountain Bicycles ",
+"Rotec ",
+"S&M Bikes ",
+"Salsa Cycles ",
+"Sampson ",
+"Santa Cruz ",
+"Saracen ",
+"Schwinn ",
+"Scott USA ",
+"Serotta ",
+"Sette ",
+"Seven Cycles ",
+"Signal Cycles ",
+"Silverback ",
+"Sinister Bikes ",
+"Specialized ");
+$selected = "bike company";
+echo dropdown( $name, $list, $selected);
+function dropdown( $name, array $list, $selected)
+{
+//begin the select
+$dropdown = '<select name="'.$name.'" id="'.$name.'">'."\n";
+
+$selected = $selected;
+// loop over the list
+foreach( $list as $key=>$list )
+{
+// assign a selected value //
+$select = $selected==$key ? ' selected' : null;
+
+// add each north location to the dropdown //
+$dropdown .= '<option value="'.$key.'"'.$select.'>'.$list.'</option>'."\n";
+}
+
+//close the select //
+$dropdown .= '</select>'."\n";
+
+//and return the completed dropdown 
+return $dropdown;
+}
+?>
+</body>
+</html>
